@@ -1,6 +1,6 @@
 # Projeto SuitPayCollege
 
-Este é um projeto que simula o sistema adminstrador de uma escola ou faculdade utilizando permitindo cadastro de alunos, cursos e matrículas.
+Este é um projeto que simula o sistema administrador de uma escola ou faculdade permitindo cadastro de alunos, cursos e matrículas.
 
 ## Configuração do Ambiente
 
