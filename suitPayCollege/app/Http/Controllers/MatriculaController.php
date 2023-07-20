@@ -72,6 +72,7 @@ class MatriculaController extends Controller
         $matricula->save();
 
         return redirect()->route('matriculas.lista')->with('success', 'Matrícula criada com sucesso!');
+        
         } else { 
 
             return $verificaMatricula;

@@ -16,8 +16,6 @@ class AlunoController extends Controller
     public function index()
     {
 
-        //$alunos = Aluno::where('lixeira', false)->get();
-
 
         $alunos = DB::table('alunos')
         ->leftJoin('matriculas', 'alunos.aluno_id', '=', 'matriculas.aluno_id')
