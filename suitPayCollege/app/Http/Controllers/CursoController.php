@@ -16,7 +16,8 @@ class CursoController extends Controller
     {
         $cursos = Curso::where('lixeira', false)->get();
 
-        return view('cursos.lista-cursos', ['cursos' => $cursos]);    }
+        return view('cursos.lista-cursos', ['cursos' => $cursos]);    
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -43,7 +44,8 @@ class CursoController extends Controller
             'descricaoCurso' => 'required',
             'dataInicio' => 'required|date',
             'dataTermino' => 'required|date',
-            'prazoInscricao' => 'required|date'
+            'prazoInscricao' => 'required|date',
+            'tipo' => 'required|string'
         ],[
             'nome.required' => 'Nome é obrigatório.',
             'nome.unique' => 'Já existe um curso com esse nome.',
@@ -52,6 +54,8 @@ class CursoController extends Controller
             'dataInicio.required' => 'Data de início é obrigatório.',
             'dataTermino.required' => 'Data de término é obrigatório.',
             'prazoInscricao.required' => 'Prazo de inscrição é obrigatório.',
+            'tipo.required' => 'Tipo é obrigatório.',
+
 
             
         ]);
@@ -64,6 +68,7 @@ class CursoController extends Controller
         $curso->data_inicio = $request->dataInicio;
         $curso->data_termino = $request->dataTermino;
         $curso->prazo_inscricao = $request->prazoInscricao;
+        $curso->tipo = $request->tipo;
 
         $curso->save();
 
@@ -110,7 +115,9 @@ class CursoController extends Controller
             'descricaoCurso' => 'required',
             'dataInicio' => 'required|date',
             'dataTermino' => 'required|date',
-            'prazoInscricao' => 'required|date'
+            'prazoInscricao' => 'required|date',
+            'tipo' => 'required|string'
+
         ],[
             'nome.required' => 'Nome é obrigatório.',
             'nome.unique' => 'Já existe um curso com esse nome.',
@@ -119,6 +126,9 @@ class CursoController extends Controller
             'dataInicio.required' => 'Data de início é obrigatório.',
             'dataTermino.required' => 'Data de término é obrigatório.',
             'prazoInscricao.required' => 'Prazo de inscrição é obrigatório.',
+            'tipo' => 'required|string'
+
+            
 
             
         ]);
@@ -131,6 +141,8 @@ class CursoController extends Controller
         $curso->data_inicio = $request->dataInicio;
         $curso->data_termino = $request->dataTermino;
         $curso->prazo_inscricao = $request->prazoInscricao;
+        $curso->tipo = $request->tipo;
+
 
         $curso->save();
 

@@ -52,6 +52,22 @@
                         <textarea class="form-control" rows="6" id=descricaoCurso" name="descricaoCurso" placeholder="Descrição do curso" >{{$curso->descricao}}</textarea>
                     </div>
                     <div class="row">
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12">
+                                <label for="tipo">Tipo</label>
+                                <select class="form-control" id="tipo" name="tipo" value={{$curso->tipo}}>
+                                    <option value="PRESENCIAL">Presencial</option>
+                                    <option value="ONLINE">Online</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="form-group">
+                                    <label for="prazoInscricao">Prazo de inscrição</label>
+                                    <input type="date" class="form-control" id="prazoInscricao" name="prazoInscricao" value={{$curso->prazo_inscricao}} >
+                                </div>
+                            </div>
+                        </div>
                   
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
@@ -67,14 +83,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12">
-                            <div class="form-group">
-                                <label for="prazoInscricao">Prazo de inscrição</label>
-                                <input type="date" class="form-control" id="prazoInscricao" name="prazoInscricao" value={{$curso->prazo_inscricao}} >
-                            </div>
-                        </div>
-                    </div>
+                 
      
           
             </div>

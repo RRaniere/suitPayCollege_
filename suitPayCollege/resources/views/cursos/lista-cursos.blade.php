@@ -52,6 +52,7 @@
                                 <th class="wd-10p border-bottom-0 text-center">Data de início</th>
                                 <th class="wd-25p border-bottom-0 text-center">Data de término</th>
                                 <th class="wd-20p border-bottom-0 text-center">Quantidade de vagas</th>
+                                <th class="wd-20p border-bottom-0 text-center">Tipo</th>
                                 <th></th>
 
                             </tr>
@@ -67,6 +68,7 @@
                                 <td class="text-center">{{\Carbon\Carbon::parse($curso->data_inicio)->format('d/m/Y');}} </td>
                                 <td class="text-center">{{\Carbon\Carbon::parse($curso->data_termino)->format('d/m/Y');}} </td>
                                 <td class="text-center">{{$curso->qtMaxMatriculas}}</td>
+                                <td class="text-center">{{$curso->tipo}}</td>
                                 <td class="text-center">
                                     <a href="{{ url('/') }}/cursos/editar/{{$curso->curso_id}}" class="badge bg-info  me-1 "><i class="fa fa-pencil"></i></a>
                                     <a href="{{ url('/') }}/cursos/apagar/{{$curso->curso_id}}" class="badge bg-danger  me-1 "><i class="fa fa-trash"></i></a>

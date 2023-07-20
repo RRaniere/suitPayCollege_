@@ -37,7 +37,7 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
                                 <label for="nome">Nome do aluno</label>
-                                <select class="form-control" id="nome" name="aluno" >
+                                <select class="form-control" id="nome" name="aluno" required>
                                     <option value="">Selecione um aluno</option>
                                 </select>
                             </div>
@@ -45,7 +45,7 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
                                 <label for="nome">Curso</label>
-                                <select class="form-control" class="form-control" id="curso" name="curso" placeholder="Curso">
+                                <select class="form-control" class="form-control" id="curso" name="curso"  required>
                                     <option value="">Selecione um curso</option>
                                 </select>
                             </div>
@@ -55,7 +55,7 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
                                 <label for="dataInicio">Data de matrícula</label>
-                                <input type="date" class="form-control" id="dataMatricula" name="dataMatricula" >
+                                <input type="date" class="form-control" id="dataMatricula" name="dataMatricula" required>
                             </div>
                         </div>
                     </div>

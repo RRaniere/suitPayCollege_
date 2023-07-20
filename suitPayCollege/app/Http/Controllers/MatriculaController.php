@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Matricula;
+use App\Models\Curso;
 use Illuminate\Http\Request;
 use DB;
 
@@ -59,6 +60,10 @@ class MatriculaController extends Controller
         ]);
 
 
+        $verificaMatricula = self::verificaMatricula($request->aluno, $request->curso);
+
+        if($verificaMatricula === true){
+
         $matricula = new Matricula;
         $matricula->aluno_id = $request->aluno;
         $matricula->curso_id = $request->curso;
@@ -66,7 +71,13 @@ class MatriculaController extends Controller
       
         $matricula->save();
 
-        return redirect()->route('matriculas.lista')->with('success', 'Matrícula criada com sucesso!');   
+        return redirect()->route('matriculas.lista')->with('success', 'Matrícula criada com sucesso!');
+        } else { 
+
+            return $verificaMatricula;
+
+        }
+
     }
 
     /**
@@ -112,5 +123,24 @@ class MatriculaController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function verificaMatricula($aluno_id, $curso_id) { 
+
+        $matriculaExistente = Matricula::where('aluno_id', $aluno_id)->where('curso_id', $curso_id)->exists();
+        if ($matriculaExistente) {
+            return redirect()->back()->withErrors(['message' => 'Essa matrícula já existe.']);
+        }
+
+        $quantidadeMatriculadosCurso = Matricula::where('curso_id', $curso_id)->count();
+        $quantidadeVagas = Curso::where('curso_id', $curso_id)->pluck('qtMaxMatriculas');
+
+        if($quantidadeVagas[0] < $quantidadeMatriculadosCurso) { 
+            return redirect()->back()->withErrors(['message' => 'Curso está lotado.']);
+        }
+
+
+        return true;
+
     }
 }

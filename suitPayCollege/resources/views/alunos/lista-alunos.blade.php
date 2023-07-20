@@ -66,7 +66,7 @@
                                 <td>{{$aluno->email}}</td>
                                 <td class="text-center">{{$aluno->celular}}</td>
                                 <td class="text-center">{{\Carbon\Carbon::parse($aluno->data_nascimento)->format('d/m/Y');}} </td>
-                                <td class="text-center">0</td>
+                                <td class="text-center">{{$aluno->quantidade_matriculas}}</td>
                                 <td class="text-center">
                                     <a href="{{ url('/') }}/alunos/editar/{{$aluno->aluno_id}}" class="badge bg-info  me-1 "><i class="fa fa-pencil"></i></a>
                                     <a href="{{ url('/') }}/alunos/apagar/{{$aluno->aluno_id}}" class="badge bg-danger  me-1 "><i class="fa fa-trash"></i></a>

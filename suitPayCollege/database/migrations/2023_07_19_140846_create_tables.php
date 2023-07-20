@@ -21,6 +21,7 @@ return new class extends Migration
             $table->date('prazo_inscricao');
             $table->date('data_inicio');
             $table->date('data_termino');
+            $table->string('tipo')->default('PRESENCIAL');
             $table->boolean('lixeira')->default(false);
             $table->timestamps();
         });

@@ -37,31 +37,31 @@
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
                                 <label for="nome">Nome</label>
-                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
                                 <label for="sobrenome">Sobrenome</label>
-                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Sobrenome">
+                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="Sobrenome" required>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                     </div>
                     <div class="row">
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
                                 <label for="celular">Celular</label>
-                                <input type="number" class="form-control" id="celular" name="celular" placeholder="Celular">
+                                <input type="number" class="form-control" id="celular" name="celular" placeholder="Celular" required>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="form-group">
                                 <label for="datanascimento">Data de nascimento</label>
-                                <input type="date" class="form-control" id="datanascimento" name="datanascimento" placeholder="Data de nascimento">
+                                <input type="date" class="form-control" id="datanascimento" name="datanascimento" placeholder="Data de nascimento" required>
                             </div>
                         </div>
                     </div>

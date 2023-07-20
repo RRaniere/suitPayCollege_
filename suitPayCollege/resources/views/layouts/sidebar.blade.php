@@ -20,7 +20,7 @@
                             <h3>Dashboard</h3>
                         </li>
                         <li class="slide">
-                            <a class="side-menu__item" data-bs-toggle="slide" href="index.html"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Dashboard</span></a>
+                            <a class="side-menu__item" data-bs-toggle="slide" href="{{ url('/') }}"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Dashboard</span></a>
                         </li>
                        
                         <li class="sub-category">

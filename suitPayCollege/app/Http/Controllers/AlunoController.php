@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Aluno;
 use Illuminate\Http\Request;
+use DB;
 
 class AlunoController extends Controller
 {
@@ -15,11 +16,19 @@ class AlunoController extends Controller
     public function index()
     {
 
-        $alunos = Aluno::where('lixeira', false)->get();
+        //$alunos = Aluno::where('lixeira', false)->get();
 
+
+        $alunos = DB::table('alunos')
+        ->leftJoin('matriculas', 'alunos.aluno_id', '=', 'matriculas.aluno_id')
+        ->select('alunos.*', DB::raw('COUNT(matriculas.aluno_id) as quantidade_matriculas'))
+        ->groupBy('alunos.aluno_id')
+        ->get();
+
+         
         return view('alunos.lista-alunos', ['alunos' => $alunos]);
-    }
 
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -43,9 +52,9 @@ class AlunoController extends Controller
 
 
         $formValidado = $request->validate([
-            'nome' => 'required|max:255',
-            'sobrenome' => 'required|max:255',
-            'email' => 'required|unique:alunos',
+            'nome' => 'required|string|max:255',
+            'sobrenome' => 'required|string|max:255',
+            'email' => 'required|email|unique:alunos',
             'celular' => 'required|unique:alunos',
             'datanascimento' => 'required|date',
         ],[

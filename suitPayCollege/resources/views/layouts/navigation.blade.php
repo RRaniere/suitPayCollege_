@@ -54,14 +54,11 @@
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                     <div class="drop-heading">
                                         <div class="text-center">
-                                            <h5 class="text-dark mb-0">Elizabeth Dyer</h5>
+                                            <h5 class="text-dark mb-0">{{auth()->user()->name}}</h5>
                                         </div>
                                     </div>
                                     <div class="dropdown-divider m-0"></div>
-                                    <a class="dropdown-item" href="profile.html">
-                                        <i class="dropdown-icon fe fe-user"></i> Minha conta
-                                    </a>
-                                    <a class="dropdown-item" href="login.html">
+                                    <a class="dropdown-item" href="{{ url('/') }}/logout">
                                         <i class="dropdown-icon fe fe-alert-circle"></i> Sair
                                     </a>
                                 </div>

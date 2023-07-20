@@ -25,4 +25,12 @@ class Aluno extends Model
     protected $casts = [
         'lixeira' => 'boolean',
     ];
+
+    /** 
+     * 
+     * 
+     * @teste return count(new App/Models/Aluno)->getFillable()) == 3
+     * 
+     * 
+     * */ 
 }
